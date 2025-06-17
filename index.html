@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: #3498db;
+      transition: transform 0.3s ease;
+    }
+
+    .hovered {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="myBox"></div>
+
+  <script>
+    const box = document.getElementById('myBox');
+
+    box.addEventListener('mouseenter', () => {
+      box.classList.add('hovered');
+    });
+
+    box.addEventListener('mouseleave', () => {
+      // Delay class removal to allow full transition
+      setTimeout(() => {
+        box.classList.remove('hovered');
+      }, 300); // 0.3s = 300ms
+    });
+  </script>
+</body>
+</html>
